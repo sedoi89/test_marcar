@@ -1,4 +1,4 @@
-import { LoaderCircle } from 'lucide-react';
+import { EyeClosed, LoaderCircle } from 'lucide-react';
 import { Portal } from '@radix-ui/react-portal';
 import { ComponentProps, useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -32,14 +32,21 @@ export const BigImageView = ({
         </div>
       ) : null}
 
-      <div className={cn('z-30 block w-full p-16', { hidden: !loaded })}>
+      <div className={cn('z-30 block w-full max-w-[85%]', { hidden: !loaded })}>
         <img
           src={imageUrl}
           alt={alt}
-          className="block h-auto w-full object-contain"
+          className="relative block h-auto w-full object-contain"
           onLoad={() => setLoaded(true)}
           sizes="(max-width: 1240px)"
         />
+        <div
+          className="group absolute right-2 top-2 z-20 flex size-9 cursor-pointer items-center justify-center
+            rounded-full bg-white/85 opacity-30 transition-all duration-200 hover:opacity-100"
+          onClick={() => onClose?.()}
+        >
+          <EyeClosed className="text-gray-600 group-hover:text-orange-400" />
+        </div>
       </div>
     </Portal>
   );
