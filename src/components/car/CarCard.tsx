@@ -1,8 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Calendar, Car, Fuel, Star } from 'lucide-react';
-import { CarImagesClient } from '@/components/car/CarImages';
-
+import { CarImagesCarousel } from '@/components/car/CarImagesCarousel';
 type CarCardProps = {
   img: string[];
   folder: string;
@@ -17,7 +16,7 @@ export default function CarCard({ img, folder, price, mark, fuel, year, miles }:
   return (
     <Card className="relative mx-auto grid w-full grid-rows-2 overflow-hidden rounded-2xl shadow-lg">
       <div className="relative h-56 w-full">
-        <CarImagesClient images={img} folder={folder} mark={mark} />
+        <CarImagesCarousel images={img} folder={folder} mark={mark} />
       </div>
       <div
         className="group absolute right-2 top-2 z-20 flex size-9 cursor-pointer items-center justify-center
