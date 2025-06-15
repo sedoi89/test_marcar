@@ -1,0 +1,24 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "semi": true,
+  "tabWidth": 2,
+  "plugins": [
+    "prettier-plugin-multiline-arrays",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-classnames",
+    "prettier-plugin-merge"
+  ],
+  "tailwindStylesheet": "./app/globals.css",
+  "tailwindFunctions": [
+    "clsx",
+    "cva",
+    "cn"
+  ],
+  "customFunctions": [
+    "clsx",
+    "cva",
+    "cn"
+  ]
+}
